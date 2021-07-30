@@ -1,0 +1,158 @@
+@import "colors";
+@import "mixins";
+@import "reset";
+
+body {
+    header {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+
+        .container {
+            height: 100%;
+            // background-color: rgb(110, 109, 106);
+            display: flex;
+            align-items: center;
+
+            .list-group {
+                &-item {
+                    a {
+                        color: $nav_text;
+                        font-weight: bold;
+                        transition: color 0.3s linear;
+
+                        &:hover {
+                            color: $active;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    section#home {
+        height: 100vh;
+        width: 100%;
+        background-image: url(../img/cover.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: color-burn;
+        background-color: #0000002b;
+        display: flex;
+        align-items: center;
+
+        .slogan {
+            width: 650px;
+
+            h1 {
+                line-height: 1.5;
+                font-size: 50px;
+            }
+
+            small {
+                font-size: 15px;
+            }
+        }
+        a.myscroll {
+            display: flex;
+            align-items: center;
+            color: $white;
+            position: absolute;
+            bottom: 50px;
+        }
+    }
+    section#engineers {
+        .heading {
+            h1 {
+                color: $heading_text;
+            }
+
+            .read-more {
+                border: 3px solid $btn-shadow-color;
+                border-radius: 10px;
+                width: 200px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                font-weight: 600;
+                transition: all 0.15s linear;
+                -webkit-transition: all 0.15s linear;
+                color: $text_dark;
+
+                span {
+                    color: $active;
+                    font-size: 20px;
+                    transition: all 0.15s linear;
+                }
+
+                &:hover {
+                    border-color: $active;
+
+                    span {
+                        transform: translateX(5px);
+                    }
+                }
+            }
+        }
+
+        .card {
+            border: 0;
+            box-shadow: 0 0 1px black;
+            .card-body {
+                border: 0;
+                h4 {
+                    color: $text_dark;
+                }
+                p {
+                    color: $muted_text !important;
+                    font-size: 16px;
+                    line-height: 1.62;
+                    text-align: center;
+                    color: #8d97a5;
+                    // font-weight: 600;
+                }
+            }
+        }
+    }
+    section#dark-city {
+        min-height: 100vh;
+        width: 100%;
+        background-image: url(../img/dark_city.jpg);
+        background-position: center;
+        background-attachment: fixed;
+
+        .tech{
+            
+            
+            h1{
+                width: 500px;
+                line-height: 1.5;
+            }
+        }
+        .bg-navy{
+            background-color: #2d3192b5;
+            background-blend-mode: color-burn;
+
+            .list-group{
+            
+
+
+                &-item:not(:last-of-type){
+                   
+                    position: relative;
+    
+                    &::after{
+                        content: '';
+                        position: absolute;                    
+                        width: 80%;
+                        height: 1px;
+                        background-color: rgba(255, 255, 255, 0.15);;
+                    }
+
+                    
+                }
+            }
+        }
+      
+    }
+}
