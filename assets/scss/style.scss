@@ -155,4 +155,38 @@ body {
         }
       
     }
+    section#counter{
+       .row{
+           margin: 100px 0;
+
+           .text-navy{
+               color: $heading_text;
+           }
+        .counter-box{
+            h1{
+                color: $active;
+            }
+            p{
+                color: $text_dark;
+                font-weight: 600;
+            }
+       }
+        }
+    }
+    section#logos{
+        background-color: #F6F8FE;
+
+        .text-navy{
+            color: $heading_text;
+        }
+        
+        .image-box{
+            height: 150px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+    }
 }
