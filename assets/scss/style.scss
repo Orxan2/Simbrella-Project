@@ -70,31 +70,7 @@ body {
             }
 
             .read-more {
-                border: 3px solid $btn-shadow-color;
-                border-radius: 10px;
-                width: 200px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                font-weight: 600;
-                transition: all 0.15s linear;
-                -webkit-transition: all 0.15s linear;
-                color: $text_dark;
-
-                span {
-                    color: $active;
-                    font-size: 20px;
-                    transition: all 0.15s linear;
-                }
-
-                &:hover {
-                    border-color: $active;
-
-                    span {
-                        transform: translateX(5px);
-                    }
-                }
+                @extend %read-more;
             }
         }
 
@@ -112,7 +88,6 @@ body {
                     line-height: 1.62;
                     text-align: center;
                     color: #8d97a5;
-                    // font-weight: 600;
                 }
             }
         }
@@ -183,38 +158,14 @@ body {
         }
     }
     section#teams {
-        // .card{
-        //     width: 196px;
-        //     .card-header{
-        //         background-image: url(../img/team_layout.png);
-        //         background-repeat: no-repeat;
-        //         background-size: cover;
-        //         display: flex;
-        //         justify-content: center;
-        //         padding: 0;
-        //         border: 0;
-        //     }
-        //     .card-body{
-        //         h6{
-        //             color: $text_dark;
-        //         }
-        //     }
-        //     .card-footer{
-        //         border: 0;
-        //         background-color: transparent;
-        //         text-align: center;
-
-        //         small{
-        //             color: $muted_text;
-        //             font-weight: 600;
-        //         }
-        //     }
-
-        // }
-
         .row {
             justify-content: center;
             padding: 1rem 0;
+
+            .text-navy {
+                color: $heading_text;
+            }
+
             .mycard {
                 width: 196px;
 
@@ -243,6 +194,84 @@ body {
                     small {
                         color: $muted_text;
                         font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    section#jobs {
+        padding: 3rem 0;
+        background-color: #f6f8fe;
+
+        .text-navy {
+            color: $heading_text;
+        }
+
+        .card {
+            background-color: $heading_text;
+            transform: translateX(-30px);
+            margin: 0 -30px;
+            padding: 25px;
+            .card-footer {
+                .read-more {
+                    @extend %read-more;
+                    width: 225px;
+                    color: white;
+
+                    span {
+                        margin-left: 25px;
+                    }
+                }
+            }
+        }
+    }
+    section#news {
+        .heading {
+            h1 {
+                color: $heading_text;
+            }
+
+            .read-more {
+                @extend %read-more;
+            }
+        }
+
+        .card {
+            .card-header {
+                .imagebox {
+                    height: 140px;
+                    img{
+                        transition: transform .2s linear;
+                    }
+                }
+            }
+            .card-body {
+                padding: 1rem 0;
+                p {
+                    color: $text_dark;
+                    font-size: 17px;
+                    line-height: 1.62;
+                    font-weight: 600;
+                }
+            }
+            .card-footer {
+                background-color: transparent;
+                border: 0;
+                padding: 1rem 0;
+                p {
+                    color: $muted_text;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+
+            &:hover {
+                .card-header {
+                    .imagebox {
+                        overflow: hidden;
+                        img {
+                            transform: scale(1.05);
+                        }
                     }
                 }
             }

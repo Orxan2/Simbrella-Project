@@ -1,0 +1,27 @@
+%read-more {
+    border: 3px solid $btn-shadow-color;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 600;
+    transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    color: $text_dark;
+
+    span {
+        color: $active;
+        font-size: 20px;
+        transition: all 0.15s linear;
+    }
+
+    &:hover {
+        border-color: $active;
+
+        span {
+            transform: translateX(5px);
+        }
+    }
+}
