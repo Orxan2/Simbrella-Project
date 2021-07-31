@@ -9,3 +9,8 @@ a{
 ul,ol{
     list-style: none;
 }
+.active{
+    a{
+        color: $active !important;
+    }
+}

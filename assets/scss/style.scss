@@ -23,9 +23,13 @@ body {
                         font-weight: bold;
                         transition: color 0.2s linear;
 
-                        &:hover {
-                            color: $active;
+                        &.text-dark{
+                            color: $text_dark;
                         }
+                        &:hover {
+                            color: $active !important;
+                        }
+
                     }
                 }
             }
