@@ -11,6 +11,101 @@ ul,ol{
 }
 .active{
     a{
-        color: $active !important;
+        color: $active !important;       
+       
     }
 }
+path{
+    position: relative;
+}
+// .infobox{
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 125px;
+//     height: 60px;
+//     background-color: black;
+//     color: white;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     // border-radius: 1rem;
+//     border-top-left-radius: 1rem;
+//     border-top-right-radius: 1rem;
+//     border-bottom-right-radius: 1rem;
+//     // margin-left: 450px;
+//     // border-top-left-radius: 1rem;
+
+//     &::after{
+//         content: '';
+//         position: absolute;
+//         // top: 0;
+//         bottom: -75px;
+//         left: -10px;
+//         width: 50px;
+//         height: 75px;
+//     //   right: 0;
+        
+//        clip-path: polygon(21% 0, 21% 50%, 60% 0);
+//        background-color: black;
+
+//     }
+//     img{
+//         width: 50px;
+//         height: 25px;
+//         margin: 0 5px;
+//     }
+// }
+
+// xxxxxxxxxxxxxxxx
+
+.flying_country {
+    display: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 35px;
+    padding: 0 10px;
+    background: #fff;
+    border-radius: 8px 8px 8px 0;
+    position: absolute; }
+    .flying_country.show_me {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .flying_country::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 10px 0 0;
+      border-color: #fff transparent transparent transparent;
+      position: absolute;
+      left: 0;
+      top: 100%; }
+    .flying_country span {
+      display: inline-block;
+      padding: 0 0 0 6px;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      text-transform: capitalize;
+      color: #222; }
+    .flying_country img {
+      width: 24px;
+      -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); }
+  

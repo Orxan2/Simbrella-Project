@@ -23,13 +23,12 @@ body {
                         font-weight: bold;
                         transition: color 0.2s linear;
 
-                        &.text-dark{
+                        &.text-dark {
                             color: $text_dark;
                         }
                         &:hover {
                             color: $active !important;
                         }
-
                     }
                 }
             }
@@ -49,13 +48,14 @@ body {
 
         .slogan {
             width: 650px;
-
             h1 {
+                animation: slide-up 0.5s;
                 line-height: 1.5;
                 font-size: 50px;
             }
 
-            small {
+            p {
+                animation: slide-up 1s;
                 font-size: 15px;
             }
         }
@@ -68,6 +68,9 @@ body {
         }
     }
     section#engineers {
+        animation: slide-up 1s;
+        animation-play-state: paused;
+
         .heading {
             h1 {
                 color: $heading_text;
@@ -102,8 +105,14 @@ body {
         background-image: url(../img/dark_city.jpg);
         background-position: center;
         background-attachment: fixed;
-
+        position: relative;
         .tech {
+            position: absolute;
+            top: 35%;
+            left: 100px;
+
+            animation: slide-right 1s;
+            animation-play-state: paused;
             h1 {
                 width: 500px;
                 line-height: 1.5;
@@ -127,6 +136,13 @@ body {
                 }
             }
         }
+        .slide-down {
+            display: none;
+            position: absolute;
+            height: 100%;
+            right: 0;
+            top: 0;
+        }
     }
     section#counter {
         .row {
@@ -148,6 +164,8 @@ body {
     }
     section#logos {
         background-color: #f6f8fe;
+        animation: slide-up 0.5s;
+        animation-play-state: paused;
 
         .text-navy {
             color: $heading_text;
@@ -207,6 +225,15 @@ body {
         padding: 3rem 0;
         background-color: #f6f8fe;
 
+        .slide-up {
+            animation: slide-up 0.5s;
+            animation-play-state: paused;
+
+            &:last-of-type {
+                animation-duration: 1s;
+            }
+        }
+
         .text-navy {
             color: $heading_text;
         }
@@ -229,7 +256,10 @@ body {
             }
         }
     }
+
     section#news {
+        animation: slide-up 0.5s;
+        animation-play-state: paused;
         .heading {
             h1 {
                 color: $heading_text;
@@ -244,8 +274,8 @@ body {
             .card-header {
                 .imagebox {
                     height: 140px;
-                    img{
-                        transition: transform .2s linear;
+                    img {
+                        transition: transform 0.2s linear;
                     }
                 }
             }
@@ -280,5 +310,106 @@ body {
                 }
             }
         }
+    }
+    footer {
+        background-color: black;
+
+        .layout {
+            background-image: url(../img/footer.svg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h1 {
+                color: $white;
+            }
+            p {
+                color: $white;
+                a {
+                    color: $white;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .cities {
+            .list-group-item {
+                position: relative;
+
+                a {
+                    color: $footer_nav_text;
+                    transition: color 0.3s linear;
+                }
+
+                a.read-more {
+                    @extend %read-more;
+                    color: $white;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        color: $active;
+                    }
+                }
+
+                &:not(:last-of-type)::after {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 1px;
+                    background-color: $footer_border_color;
+                    right: 0;
+                }
+            }
+        }
+        .list-group {
+            .list-group-item {
+                p {
+                    font-size: 18px;
+                    color: $footer_list_heading;
+                }
+
+                h5,
+                a {
+                    color: white;
+                    line-height: 1.5;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 100px;
+            p {
+                color: $copyright;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
