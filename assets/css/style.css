@@ -257,6 +257,15 @@ body section#counter .row .counter-box p {
   font-weight: 600;
 }
 
+body section#map [data-city="RU"]:hover {
+  fill: white;
+}
+
+body section#map path:hover {
+  fill: blue;
+  cursor: pointer;
+}
+
 body section#logos {
   background-color: #f6f8fe;
   animation: slide-up 0.5s;

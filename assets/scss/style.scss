@@ -162,6 +162,15 @@ body {
             }
         }
     }
+    section#map {
+        [data-city="RU"]:hover {
+            fill: white;
+        }
+        path:hover {
+            fill: blue;
+            cursor: pointer;
+        }
+    }
     section#logos {
         background-color: #f6f8fe;
         animation: slide-up 0.5s;
@@ -385,7 +394,7 @@ body {
                 }
             }
         }
-        #amsterdam{
+        #amsterdam {
             display: block;
         }
         .copyright {
