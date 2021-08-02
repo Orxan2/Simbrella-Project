@@ -48,27 +48,34 @@ $(document).ready(function () {
         if ($(window).scrollTop() >= $("#jobs").offset().top - $("#jobs").height() / 2) {
             $("#jobs .slide-up").each(function (index, element) {
                 element == this;
-                console.log(element);
                 $(element).css('animation-play-state', 'unset')
             });
         }
         if ($(window).scrollTop() >= $("#dark-city").offset().top - $("#dark-city").height() / 2) {
-            // console.log('okay');
             $("#dark-city .tech").css('animation-play-state', 'unset');            
                 $("#dark-city .slide-down").slideDown(1000);
-           
-                
-                console.log($("#dark-city .slide-down"));
-            
-           
-            
-
-        }
+           }
 
     });
+    // console.log( $(`footer a[data-id = ${$('footer ul').attr('id')}`));
+    $('footer .cities .list-group-item:not(:last-of-type) a').each(function (index, element) {
+    element == this;
+   
+$(element).click(function (e) {     
+    e.preventDefault();
+    
+    console.log($(element).attr('data-id'));
+   console.log( $(`footer [id = ${$(element).attr('data-id')}`));
 
-
-
-    // AOS.init();
-
+   $('footer ul.list-group:not(.cities)').each(function (index, element){
+       $(element).css('display','none');
+   });
+     
+   $(`footer [id = ${$(element).attr('data-id')}`).css('display','block');
+   
+});
+    
+});
+    
+    
 });

@@ -443,7 +443,7 @@ body footer .cities .list-group-item:hover a {
   color: #FF931E;
 }
 
-body footer .cities .list-group-item:not(:last-of-type)::after {
+body footer .cities .list-group-item:not(:nth-of-type(4)):not(:nth-of-type(3)):after {
   content: "";
   position: absolute;
   height: 100%;
@@ -452,19 +452,28 @@ body footer .cities .list-group-item:not(:last-of-type)::after {
   right: 0;
 }
 
-body footer .list-group .list-group-item p {
+body footer .list-group:not(.cities) {
+  display: none;
+  min-height: 350px;
+}
+
+body footer .list-group:not(.cities) .list-group-item p {
   font-size: 18px;
   color: #ffffff99;
 }
 
-body footer .list-group .list-group-item h5,
-body footer .list-group .list-group-item a {
+body footer .list-group:not(.cities) .list-group-item h5,
+body footer .list-group:not(.cities) .list-group-item a {
   color: white;
   line-height: 1.5;
 }
 
+body footer #amsterdam {
+  display: block;
+}
+
 body footer .copyright {
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 body footer .copyright p {

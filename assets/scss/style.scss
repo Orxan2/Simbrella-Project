@@ -359,7 +359,7 @@ body {
                     }
                 }
 
-                &:not(:last-of-type)::after {
+                &:not(:nth-of-type(4)):not(:nth-of-type(3)):after {
                     content: "";
                     position: absolute;
                     height: 100%;
@@ -369,7 +369,9 @@ body {
                 }
             }
         }
-        .list-group {
+        .list-group:not(.cities) {
+            display: none;
+            min-height: 350px;
             .list-group-item {
                 p {
                     font-size: 18px;
@@ -383,8 +385,11 @@ body {
                 }
             }
         }
+        #amsterdam{
+            display: block;
+        }
         .copyright {
-            margin-top: 100px;
+            margin-top: 75px;
             p {
                 color: $copyright;
                 font-weight: 600;
