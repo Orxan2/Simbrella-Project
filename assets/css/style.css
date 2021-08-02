@@ -48,6 +48,11 @@ path {
   position: relative;
 }
 
+.counter {
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+
 .flying_country {
   display: none;
   flex-direction: row;

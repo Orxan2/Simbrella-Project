@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <section id="counter" class="scrollsection">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-12">
+                    <h1 class="card-title text-navy">Enhance your opportunities with us</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="counter-box">
+                        <h1 class="display-5 fw-bold"><span class="countfect" data-num="220">0</span> Million</h1>
+                        <p>END USERS SERVED GLOBALLY</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="counter-box">
+                        <h1 class="display-5 fw-bold"><span class="countfect" data-num="20">0</span> Years</h1>
+                        <p>OF PROFESSIONAL EXPERIENCE</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="counter-box">
+                        <h1 class="display-5 fw-bold"><span class="countfect" data-num="3.3">0</span> Billion$</h1>
+                        <p>WORTH OF TOTAL LOANS DISBURSED TO DATE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="counter-box">
+                        <h1 class="display-5 fw-bold number"><span class="countfect" data-num="30">0</span> Million</h1>
+                        <p>TRANSACTIONS PER DAY</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="counter-box">
+                        <h1 class="display-5 fw-bold"><span class="countfect" data-num="25">0</span> Countries</h1>
+                        <p>OUR GLOBAL PRESENCE</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="counter-box">
+                        <h1 class="display-5 fw-bold"><span class="countfect" data-num="10.9">0</span> Billion</h1>
+                        <p>TOTAL LOANS PROVIDED TO DATE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
+  <script>
+      $(window).on('scroll', function() {
+        let index= 0.0;
+    console.log($('.countfect'));
+    $('.countfect').each(function (index, element) {
+        element == this;
+        let x = setInterval(() => {
+            index ++;
+           
+        
+            $(element).text(index);
+            if (index.toFixed(1) == parseInt($(element).attr('data-num'))) {
+            clearTimeout(x);
+        }
+        
+        
+    }, 10);
+   });
+// console.log(2.1%1);
+      });
+
+   
+    </script> 
+
+   
+</body>
+</html>

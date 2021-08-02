@@ -25,7 +25,7 @@ $(document).ready(function () {
             var offset = $(this).offset();
             var top = offset.top;
             var link = $('header .list-group-item')[indexInArray];
-            if ($(window).scrollTop() >= top) {
+            if ($(window).scrollTop() >= top - $('header').height()) {
                 $(link).prev().removeClass('active');
                 $(link).addClass('active');
             }
@@ -34,12 +34,33 @@ $(document).ready(function () {
             }
         });
 
-
+       
         if ($(window).scrollTop() >= $("#engineers").offset().top - $("#engineers").height() / 2) {
-            $("#engineers").css('animation-play-state', 'unset');
+            $("#engineers").css('animation-play-state', 'unset');           
         }
         if ($(window).scrollTop() >= $("#logos").offset().top - $("#logos").height() / 2) {
             $("#logos").css('animation-play-state', 'unset');
+        }
+        if ($(window).scrollTop() >= $("#counter").offset().top - $("#counter").height() / 2) {
+            
+            let index = $('.countfect').first().text();
+      if (index == 0) {
+        $('.countfect').each(function (index, element) {
+            
+            element == this;
+            let x = setInterval(() => {
+                index ++;
+               
+            
+                $(element).text(index);
+                if (index.toFixed(1) == parseInt($(element).attr('data-num'))) {
+                clearTimeout(x);
+            }
+            
+            
+        }, 10);
+       });
+      }
         }
        
         if ($(window).scrollTop() >= $("#news").offset().top - $("#news").height() / 2) {
@@ -57,24 +78,24 @@ $(document).ready(function () {
            }
 
     });
-    // console.log( $(`footer a[data-id = ${$('footer ul').attr('id')}`));
+   
     $('footer .cities .list-group-item:not(:last-of-type) a').each(function (index, element) {
     element == this;
    
 $(element).click(function (e) {     
-    e.preventDefault();
-    
-    console.log($(element).attr('data-id'));
-   console.log( $(`footer [id = ${$(element).attr('data-id')}`));
+    e.preventDefault();    
 
    $('footer ul.list-group:not(.cities)').each(function (index, element){
        $(element).css('display','none');
-   });
-     
-   $(`footer [id = ${$(element).attr('data-id')}`).css('display','block');
-   
+   });     
+   $(`footer [id = ${$(element).attr('data-id')}`).css('display','block');   
 });
     
+});
+
+$('.counter-box span').each(function(index,element){
+    element = this;
+element
 });
     
     
